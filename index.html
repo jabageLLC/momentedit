@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE MOMENT EDIT CO. | Signature Outdoor Installations</title>
+  <style>
+    :root {
+      --black: #111111;
+      --olive: #5F6B56;
+      --sage: #A6B1A0;
+      --tan: #DCC8B2;
+      --cream: #F6F3EE;
+      --gold: #D4AF37;
+      --ink: #1f1f1f;
+      --muted: #6f6a62;
+      --line: rgba(31,31,31,.14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      letter-spacing: .02em;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: "Playfair Display", Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .script {
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      text-transform: lowercase;
+      letter-spacing: .03em;
+      color: var(--olive);
+      font-weight: 400;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .announcement {
+      background: var(--olive);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 12px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246,243,238,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", Georgia, serif;
+      letter-spacing: .22em;
+      font-size: 20px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .logo span {
+      display: block;
+      font-family: "Brush Script MT", cursive;
+      letter-spacing: .04em;
+      text-transform: lowercase;
+      color: var(--olive);
+      font-size: 20px;
+      margin-top: -3px;
+    }
+
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--black);
+      padding: 14px 24px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 11px;
+      transition: .2s ease;
+      background: transparent;
+    }
+    .btn:hover { background: var(--black); color: #fff; }
+    .btn.fill { background: var(--olive); color: #fff; border-color: var(--olive); }
+    .btn.fill:hover { background: var(--black); border-color: var(--black); }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy {
+      padding: 9vw 7vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .36em;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(46px, 8vw, 110px);
+      margin: 0;
+    }
+    .hero .script {
+      font-size: clamp(46px, 8vw, 100px);
+      margin: -10px 0 16px;
+      display: block;
+    }
+    .hero p {
+      max-width: 560px;
+      font-size: 16px;
+      color: #3b3832;
+      margin: 20px 0 32px;
+    }
+    .hero-img {
+      min-height: 600px;
+      background:
+        linear-gradient(to bottom, rgba(17,17,17,.15), rgba(17,17,17,.45)),
+        url('brand-board.png') center/cover;
+    }
+
+    section { padding: 88px 24px; }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .center { text-align: center; }
+    .section-title { font-size: clamp(32px, 5vw, 64px); margin: 0 0 16px; }
+    .section-intro { max-width: 760px; margin: 0 auto 48px; color: var(--muted); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.34);
+      padding: 34px;
+    }
+
+    .image-card {
+      min-height: 480px;
+      background: url('brand-board.png') center/cover;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 80px rgba(17,17,17,.08);
+    }
+
+    .collections {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .collection {
+      min-height: 360px;
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--line);
+      background: linear-gradient(to bottom, rgba(246,243,238,.2), rgba(17,17,17,.56)), url('brand-board.png') center/cover;
+      color: #fff;
+    }
+    .collection:nth-child(2) { background-position: 35% 60%; }
+    .collection:nth-child(3) { background-position: 60% 60%; }
+    .collection:nth-child(4) { background-position: 80% 60%; }
+    .collection h3 { margin: 0 0 8px; font-size: 24px; }
+    .collection p { margin: 0; font-size: 13px; letter-spacing: .08em; }
+
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .tier {
+      border: 1px solid var(--line);
+      padding: 38px 30px;
+      background: rgba(255,255,255,.38);
+    }
+    .tier h3 { margin: 0; font-size: 28px; }
+    .price {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin: 18px 0;
+      color: var(--olive);
+    }
+    .tier ul { padding-left: 18px; color: var(--muted); }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      counter-reset: step;
+    }
+    .step {
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      position: relative;
+    }
+    .step:before {
+      counter-increment: step;
+      content: "0" counter(step);
+      color: var(--gold);
+      letter-spacing: .2em;
+      font-size: 12px;
+    }
+    .step h3 { font-size: 19px; letter-spacing: .08em; }
+
+    .quote {
+      background: var(--olive);
+      color: #fff;
+      text-align: center;
+      padding: 90px 24px;
+    }
+    .quote p {
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 5vw, 58px);
+      line-height: 1.15;
+      max-width: 920px;
+      margin: 0 auto;
+      letter-spacing: .04em;
+    }
+
+    .service-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 26px;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 16px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      font: inherit;
+      color: var(--ink);
+    }
+    textarea { min-height: 130px; resize: vertical; }
+
+    footer {
+      padding: 54px 24px;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+    footer .logo { margin-bottom: 20px; }
+    footer p { color: rgba(255,255,255,.65); max-width: 660px; margin: 0 auto 24px; }
+
+    @media (max-width: 900px) {
+      .hero, .two-col, .tiers { grid-template-columns: 1fr; }
+      .hero-img { min-height: 420px; order: -1; }
+      .collections, .process { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .collections, .process { grid-template-columns: 1fr; }
+      section { padding: 64px 20px; }
+      .hero-copy { padding: 70px 24px; }
+      .announcement { letter-spacing: .18em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Signature installs · Custom moments · Beautifully edited</div>
+
+  <header>
+    <nav>
+      <a href="#top" class="logo">The Moment<span>edit</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#collections">Collections</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#booking" class="btn fill">Book</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Metro Detroit celebration installations</div>
+        <h1>The Moment</h1>
+        <span class="script">edit</span>
+        <p>Editorial outdoor installations made for birthdays, proposals, baby welcomes, graduations, holidays, and the people who deserve to feel seen.</p>
+        <a href="#booking" class="btn fill">Now Booking</a>
+      </div>
+      <div class="hero-img" aria-label="The Moment Edit brand imagery"></div>
+    </section>
+
+    <section id="about">
+      <div class="wrap two-col">
+        <div>
+          <div class="eyebrow">Why we exist</div>
+          <h2 class="section-title">The install is temporary. The memory is not.</h2>
+          <p>THE MOMENT EDIT CO. creates unexpected moments that help people feel seen, valued, celebrated, and remembered. We do not simply decorate for an occasion. We design around the person at the center of it.</p>
+          <p>Every installation begins with one question: <em>who are we celebrating, and why do they matter?</em></p>
+        </div>
+        <div class="card">
+          <h3>Our Promise</h3>
+          <p>We take care of every detail so you can be present in the moment. From concept to install, we design with intention and style so your milestone looks as beautiful as it feels.</p>
+          <p class="script" style="font-size:34px; margin:18px 0 0;">you celebrate. we create the moment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="signature" style="padding-top:0;">
+      <div class="wrap two-col">
+        <div class="image-card"></div>
+        <div>
+          <div class="eyebrow">The signature system</div>
+          <h2 class="section-title">A gallery in the grass.</h2>
+          <p>Our defining visual is the multi-Polaroid gallery: oversized Polaroid-style frames layered with greenery, custom captions, and personal photo panels.</p>
+          <p>The frames are reusable, the details are personalized, and the final reveal feels considered from every angle.</p>
+          <a href="#pricing" class="btn">View Packages</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections">
+      <div class="wrap center">
+        <div class="eyebrow">Choose your edit</div>
+        <h2 class="section-title">Collections</h2>
+        <p class="section-intro">Designed collections keep the experience polished, efficient, and unmistakably on-brand — while still allowing the moment to feel personal.</p>
+        <div class="collections">
+          <div class="collection"><h3>The Love Edit</h3><p>Proposals · anniversaries · engagements</p></div>
+          <div class="collection"><h3>The Baby Edit</h3><p>Welcomes · announcements · firsts</p></div>
+          <div class="collection"><h3>The Birthday Edit</h3><p>Milestones · surprises · celebrations</p></div>
+          <div class="collection"><h3>The Spooky Edit</h3><p>Editorial Halloween · October launch</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap center">
+        <div class="eyebrow">Packages & pricing</div>
+        <h2 class="section-title">Pick the scale. We edit the moment.</h2>
+        <div class="tiers">
+          <div class="tier">
+            <h3>The Single</h3>
+            <div class="price">$475</div>
+            <p>One oversized Polaroid frame with custom wording, greenery base, and palette-specific styling.</p>
+            <ul><li>60–75 minute install</li><li>24-hour display</li><li>Next-morning teardown</li></ul>
+          </div>
+          <div class="tier">
+            <h3>The Series</h3>
+            <div class="price">$950</div>
+            <p>Our signature three-Polaroid gallery with layered greenery, custom captions, and keepsake panels.</p>
+            <ul><li>90–120 minute install</li><li>Best for major milestones</li><li>Photo + caption panels included</li></ul>
+          </div>
+          <div class="tier">
+            <h3>The Collection</h3>
+            <div class="price">$1,995</div>
+            <p>The full editorial arrangement with premium florals, dramatic layering, coordinated reveal timing, and optional upgrades.</p>
+            <ul><li>2.5–4 hour install</li><li>Pre-install site visit</li><li>Professional keepsake delivery</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap center">
+        <div class="eyebrow">How it works</div>
+        <h2 class="section-title">Simple for you. Intentional from us.</h2>
+        <div class="process">
+          <div class="step"><h3>Choose</h3><p>Select your collection, package, date, and location.</p></div>
+          <div class="step"><h3>Personalize</h3><p>Send the photo, caption, story, or detail that makes the moment theirs.</p></div>
+          <div class="step"><h3>Reveal</h3><p>We install, style, photograph, and let you know when everything is ready.</p></div>
+          <div class="step"><h3>Remember</h3><p>We return for teardown. You keep the printed panels as a piece of the day.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote"><p>Three hours of setup for ninety seconds of “oh my god.” We think it’s a fair trade.</p></div>
+
+    <section id="area">
+      <div class="wrap center">
+        <div class="eyebrow">Service area</div>
+        <h2 class="section-title">East side of Metro Detroit</h2>
+        <p class="section-intro">Based in Clinton Township and serving Macomb County, the Grosse Pointe communities, Rochester, Rochester Hills, and nearby east-side neighborhoods.</p>
+        <div class="service-area">
+          <span class="pill">Clinton Township</span><span class="pill">Macomb</span><span class="pill">Shelby</span><span class="pill">Washington</span><span class="pill">Rochester</span><span class="pill">Grosse Pointe</span><span class="pill">St. Clair Shores</span><span class="pill">Sterling Heights</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="wrap center">
+        <div class="eyebrow">Now booking</div>
+        <h2 class="section-title">Tell us who we’re celebrating.</h2>
+        <p class="section-intro">This form is ready for visual mockup purposes. Connect it to Squarespace, Acuity, Formspree, or your booking platform before publishing.</p>
+        <form>
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Email address" />
+          <select>
+            <option>Choose an Edit</option>
+            <option>The Love Edit</option>
+            <option>The Baby Edit</option>
+            <option>The Birthday Edit</option>
+            <option>The Spooky Edit</option>
+          </select>
+          <select>
+            <option>Choose a package</option>
+            <option>The Single — $475</option>
+            <option>The Series — $950</option>
+            <option>The Collection — $1,995</option>
+          </select>
+          <textarea placeholder="Who are we celebrating, and why do they matter?"></textarea>
+          <button type="button" class="btn fill">Request Date</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">The Moment<span>edit</span></div>
+    <p>Signature installs. Custom moments. Beautifully edited.</p>
+    <p>© 2026 THE MOMENT EDIT CO. · Clinton Township, Michigan</p>
+  </footer>
+</body>
+</html>
